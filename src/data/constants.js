@@ -30,7 +30,7 @@ export const NAV_LINKS = [
 // ─── Stats bar ─────────────────────────────────────────────
 export const STATS = [
   { value: '200+', label: 'Families enrolled'      },
-  { value: '30+',  label: 'Cultures & languages'   },
+  { value: '50+',  label: 'Culture paths'           },
   { value: '95%',  label: 'Trial-to-paid rate'     },
   { value: '4.9★', label: 'Avg teacher rating'     },
 ]
@@ -86,13 +86,20 @@ export const TESTIMONIALS = [
     child: 'Son, 13',
     img: 'familyC',
   },
+  {
+    quote: "We tried two other platforms first. They felt transactional. Kinora felt like someone actually cared where my children came from. Within a week we had a Tamil teacher who grew up in the same district as my parents.",
+    name: 'Priya S.',
+    location: 'Melbourne, AU',
+    child: 'Two children, 7 & 10',
+    img: 'familyA',
+  },
 ]
 
 // ─── FAQ ───────────────────────────────────────────────────
 export const FAQ = [
   {
     q: 'What cultures and languages does Kinora support?',
-    a: "We currently support 30+ cultures across Africa, the Arab world, Asia, and parts of Europe. If we don't have a teacher for your background yet, we'll add you to our priority waitlist.",
+    a: "We currently support 50+ culture paths across Africa, the Middle East, South Asia, East Asia, Southeast Asia, Europe, and the Americas. If we don't have a teacher for your background yet, we'll add you to our priority waitlist.",
   },
   {
     q: 'Can my child have more than one teacher?',
@@ -113,6 +120,14 @@ export const FAQ = [
   {
     q: "Is my child's data protected?",
     a: "We collect minimal data, store it securely, and never share it with third parties. Our full data privacy policy is available before you sign up.",
+  },
+  {
+    q: 'How long is each session, and what does it look like?',
+    a: 'Sessions run 50 minutes. Each class is structured: a warm-up in your child\'s heritage language, a main activity (story, cultural lesson, or language practice), and a short recap. Your teacher sends a written report after every session.',
+  },
+  {
+    q: 'What if my child already speaks the language fluently?',
+    a: 'Fluency is just the beginning. Our teachers go deeper — cultural context, oral traditions, writing systems, proverbs, family vocabulary, and heritage identity. The parts that language apps and YouTube can\'t reach.',
   },
 ]
 

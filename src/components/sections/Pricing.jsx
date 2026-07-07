@@ -2,6 +2,7 @@ import FadeIn from '../ui/FadeIn'
 import { CheckIcon } from '../ui/Icons'
 import { scrollTo } from '../../utils/scroll'
 import { PRICING_FEATURES } from '../../data/constants'
+import { PLATFORM } from '../../config'
 
 export default function Pricing({ T }) {
   return (
@@ -11,7 +12,16 @@ export default function Pricing({ T }) {
         <FadeIn>
           <p style={{ fontSize: '.8rem', color: T.accent, letterSpacing: '.15em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 16 }}>Transparent pricing</p>
           <h2 className="sf" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 600, marginBottom: 18, color: T.text }}>Simple. Fair. Worth it.</h2>
-          <p style={{ fontSize: '.96rem', color: T.muted, marginBottom: 52, lineHeight: 1.85 }}>One plan. One live session per week. No hidden fees.</p>
+          <p style={{ fontSize: '.96rem', color: T.muted, marginBottom: 32, lineHeight: 1.85 }}>One plan. One live session per week. No hidden fees.</p>
+
+          {/* Value anchor */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: `${T.accent}10`, border: `1px solid ${T.accent}26`, borderRadius: 50, padding: '8px 22px', marginBottom: 48 }}>
+            <span style={{ fontSize: '.82rem', color: T.muted }}>
+              Private tutors: <span style={{ textDecoration: 'line-through', color: T.muted }}>$60–$100/hr</span>
+            </span>
+            <span style={{ color: T.accent, fontWeight: 700, fontSize: '1rem' }}>→</span>
+            <span style={{ fontSize: '.82rem', color: T.accent, fontWeight: 700 }}>Kinora: ~$10/session</span>
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.15}>
@@ -40,12 +50,12 @@ export default function Pricing({ T }) {
                 ))}
               </div>
 
-              <button onClick={() => scrollTo('apply')}
-                style={{ width: '100%', padding: '16px', borderRadius: 14, fontSize: '1rem', background: '#F0E4D0', color: T.accentD, fontWeight: 600, border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", transition: 'all .25s' }}
+              <a href={PLATFORM.parentSignup}
+                style={{ display: 'block', width: '100%', padding: '16px', borderRadius: 14, fontSize: '1rem', background: '#F0E4D0', color: T.accentD, fontWeight: 600, border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", transition: 'all .25s', textDecoration: 'none', textAlign: 'center', boxSizing: 'border-box' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 28px #00000030' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}>
                 Apply for a Free Trial Session
-              </button>
+              </a>
               <p style={{ color: '#6A5040', fontSize: '.75rem', marginTop: 10 }}>No credit card required for your first session</p>
             </div>
           </div>

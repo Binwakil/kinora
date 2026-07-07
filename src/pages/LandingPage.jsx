@@ -6,6 +6,8 @@ import Problem       from '../components/sections/Problem'
 import VideoSection  from '../components/sections/Video'
 import CultureSearch from '../components/sections/CultureSearch'
 import HowItWorks    from '../components/sections/HowItWorks'
+import MatchingQuality from '../components/sections/MatchingQuality'
+import LearningLoop   from '../components/sections/LearningLoop'
 import WhyKinora     from '../components/sections/WhyKinora'
 import Teachers      from '../components/sections/Teachers'
 import Testimonials  from '../components/sections/Testimonials'
@@ -30,6 +32,8 @@ export default function LandingPage({ T, dark, onToggleDark }) {
       <VideoSection  T={T} />
       <CultureSearch T={T} />
       <HowItWorks    T={T} />
+      <MatchingQuality T={T} />
+      <LearningLoop   T={T} />
       <WhyKinora     T={T} />
       <Teachers      T={T} />
       <Testimonials  T={T} />

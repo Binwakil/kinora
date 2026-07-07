@@ -2,7 +2,7 @@ import { STATS } from '../../data/constants'
 
 export default function Stats({ T }) {
   return (
-    <div style={{ background: T.statBg, padding: '38px 5%', borderTop: `1px solid ${T.accent}22` }}>
+    <div id="stats" style={{ background: T.statBg, padding: '38px 5%', borderTop: `1px solid ${T.accent}22` }}>
       <div className="grid-4" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }}>
         {STATS.map(({ value, label }) => (
           <div key={label} style={{ textAlign: 'center' }}>

@@ -1,5 +1,6 @@
 import FadeIn from '../ui/FadeIn'
 import { scrollTo } from '../../utils/scroll'
+import { PLATFORM } from '../../config'
 
 const STEPS = [
   { n: '01', title: 'Apply as a Family',        desc: 'Tell us about your child — age, cultural background, language level, and what matters most to you.' },
@@ -37,12 +38,12 @@ export default function HowItWorks({ T }) {
 
         <FadeIn delay={0.2}>
           <div style={{ textAlign: 'center', marginTop: 60 }}>
-            <button onClick={() => scrollTo('apply')}
-              style={{ padding: '15px 36px', borderRadius: 50, fontSize: '1rem', background: T.accent, color: '#fff', border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 500, transition: 'all .25s' }}
+            <a href={PLATFORM.parentSignup}
+              style={{ padding: '15px 36px', borderRadius: 50, fontSize: '1rem', background: T.accent, color: '#fff', border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 500, transition: 'all .25s', textDecoration: 'none', display: 'inline-block' }}
               onMouseEnter={e => { e.currentTarget.style.background = T.accentD; e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.transform = 'translateY(0)' }}>
               Start Your Application
-            </button>
+            </a>
           </div>
         </FadeIn>
       </div>

@@ -1,5 +1,6 @@
 import { scrollTo } from '../../utils/scroll'
 import TreeIcon from '../ui/TreeIcon'
+import { PLATFORM } from '../../config'
 
 const FOOTER_LINKS = [
   {
@@ -50,13 +51,18 @@ export default function Footer({ T }) {
               A trust-first platform connecting migrant families with culturally aligned teachers. Identity, kept alive.
             </p>
             <div style={{ display: 'flex', gap: 10, marginTop: 22 }}>
-              {['𝕏', 'in', 'f', '▶'].map(s => (
-                <div key={s}
-                  style={{ width: 32, height: 32, borderRadius: '50%', border: `1px solid ${T.footerDim}`, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: T.footerText, fontSize: '.77rem', transition: 'all .2s' }}
+              {[
+                { char: '𝕏',  href: 'https://twitter.com/kinoralearn',         label: 'X (Twitter)'  },
+                { char: 'in', href: 'https://linkedin.com/company/kinora',      label: 'LinkedIn'     },
+                { char: 'f',  href: 'https://facebook.com/kinoralearn',         label: 'Facebook'     },
+                { char: '▶',  href: 'https://youtube.com/@kinora',              label: 'YouTube'      },
+              ].map(({ char, href, label }) => (
+                <a key={char} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                  style={{ width: 32, height: 32, borderRadius: '50%', border: `1px solid ${T.footerDim}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: T.footerText, fontSize: '.77rem', transition: 'all .2s', textDecoration: 'none' }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = T.accentL; e.currentTarget.style.color = T.accentL }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = T.footerDim; e.currentTarget.style.color = T.footerText }}>
-                  {s}
-                </div>
+                  {char}
+                </a>
               ))}
             </div>
           </div>
@@ -82,7 +88,14 @@ export default function Footer({ T }) {
         {/* Bottom bar */}
         <div style={{ borderTop: `1px solid ${T.footerDim}`, paddingTop: 22, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
           <p style={{ fontSize: '.77rem', color: T.footerText }}>© 2026 Kinora Inc. All rights reserved. · Registered in Maryland, USA</p>
-          <p style={{ fontSize: '.77rem', color: T.footerText }}>Built with trust 🌿 · Identity, kept alive.</p>
+          <p style={{ fontSize: '.77rem', color: T.footerText }}>
+            Built with trust 🌿 · Identity, kept alive.
+            {' · '}
+            <a href={`${PLATFORM.base}/login/admin`}
+              style={{ color: T.footerDim, textDecoration: 'none', fontSize: '.72rem' }}>
+              Staff login
+            </a>
+          </p>
         </div>
       </div>
     </footer>

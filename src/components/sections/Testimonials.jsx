@@ -13,18 +13,19 @@ export default function Testimonials({ T }) {
           <h2 className="sf" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 600, marginBottom: 72, color: T.text }}>The moments that matter most.</h2>
         </FadeIn>
 
-        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+        {/* 2×2 grid of testimonial cards */}
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 24 }}>
           {TESTIMONIALS.map((t, i) => (
-            <FadeIn key={i} delay={i * 0.15}>
+            <FadeIn key={i} delay={i * 0.12}>
               <div style={{ background: T.card, borderRadius: 20, overflow: 'hidden', border: `1px solid ${T.border}`, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 170, overflow: 'hidden' }}>
-                  <Img src={IMG[t.img]} alt="Family" style={{ width: '100%', height: '100%' }} T={T} />
+                  <Img src={IMG[t.img]} alt={t.name} style={{ width: '100%', height: '100%' }} T={T} />
                 </div>
-                <div style={{ padding: '24px 24px 28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ padding: '26px 26px 28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', gap: 2, marginBottom: 14 }}>
-                    {[1, 2, 3, 4, 5].map(i => <StarIcon key={i} color={T.accent} />)}
+                    {[1, 2, 3, 4, 5].map(n => <StarIcon key={n} color={T.accent} />)}
                   </div>
-                  <p className="sf" style={{ fontSize: '1.07rem', color: T.text, lineHeight: 1.75, fontStyle: 'italic', fontWeight: 400, flex: 1, marginBottom: 20 }}>
+                  <p className="sf" style={{ fontSize: '1.06rem', color: T.text, lineHeight: 1.78, fontStyle: 'italic', fontWeight: 400, flex: 1, marginBottom: 20 }}>
                     "{t.quote}"
                   </p>
                   <div style={{ borderTop: `1px solid ${T.border}`, paddingTop: 16 }}>

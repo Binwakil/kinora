@@ -1,14 +1,19 @@
 import { useState, useEffect } from 'react'
 import { useScrolled } from '../../hooks/useScrolled'
+import { useActiveSection } from '../../hooks/useActiveSection'
 import { scrollTo } from '../../utils/scroll'
 import { NAV_LINKS } from '../../data/constants'
+import { PLATFORM } from '../../config'
 import TreeIcon from '../ui/TreeIcon'
 import { MoonIcon, SunIcon, MenuIcon, XIcon } from '../ui/Icons'
 import Button from '../ui/Button'
 
+const SECTION_IDS = NAV_LINKS.map(l => l.id)
+
 export default function Nav({ T, onToggleDark, dark }) {
   const scrolled = useScrolled(40)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const active = useActiveSection(SECTION_IDS)
 
   // Close mobile menu on scroll
   useEffect(() => {
@@ -43,7 +48,9 @@ export default function Nav({ T, onToggleDark, dark }) {
         {/* Desktop links */}
         <div className="d-hide" style={{ display: 'flex', gap: 32 }}>
           {NAV_LINKS.map(({ label, id }) => (
-            <button key={id} className="nav-link" style={{ color: T.text }} onClick={() => handleNav(id)}>
+            <button key={id} className="nav-link"
+              style={{ color: active === id ? T.accent : T.text, fontWeight: active === id ? 600 : 500 }}
+              onClick={() => handleNav(id)}>
               {label}
             </button>
           ))}
@@ -58,12 +65,22 @@ export default function Nav({ T, onToggleDark, dark }) {
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
 
-          <button className="d-hide nav-link" style={{ fontSize: '.85rem', color: T.muted }}>Log in</button>
+          <a href={PLATFORM.teacherLogin} className="d-hide nav-link"
+            style={{ fontSize: '.85rem', color: T.muted, textDecoration: 'none' }}>
+            Teacher login
+          </a>
 
-          <Button variant="primary" T={T} onClick={() => scrollTo('apply')}
-            style={{ padding: '10px 22px', borderRadius: 50, fontSize: '.85rem' }}>
-            Apply Free
-          </Button>
+          <a href={PLATFORM.parentLogin} className="d-hide nav-link"
+            style={{ fontSize: '.85rem', color: T.muted, textDecoration: 'none' }}>
+            Family login
+          </a>
+
+          <a href={PLATFORM.parentSignup} className="nav-primary-cta" style={{ textDecoration: 'none' }}>
+            <Button variant="primary" T={T}
+              style={{ padding: '10px 22px', borderRadius: 50, fontSize: '.85rem' }}>
+              Apply Free
+            </Button>
+          </a>
 
           {/* Mobile hamburger */}
           <button onClick={() => setMobileOpen(o => !o)}
@@ -91,10 +108,17 @@ export default function Nav({ T, onToggleDark, dark }) {
               {label}
             </button>
           ))}
-          <Button variant="primary" T={T} onClick={() => handleNav('apply')}
-            style={{ marginTop: 8, padding: '13px 16px', borderRadius: 10, fontSize: '1rem', textAlign: 'left' }}>
-            Apply for a Free Session
-          </Button>
+          <a href={PLATFORM.parentSignup} style={{ textDecoration: 'none' }}>
+            <Button variant="primary" T={T}
+              style={{ marginTop: 8, padding: '13px 16px', borderRadius: 10, fontSize: '1rem', textAlign: 'left', width: '100%' }}>
+              Apply for a Free Session
+            </Button>
+          </a>
+          <div style={{ display: 'flex', gap: 16, marginTop: 4, paddingLeft: 4 }}>
+            <a href={PLATFORM.parentLogin} style={{ fontSize: '.85rem', color: T.muted, textDecoration: 'none' }}>Family login</a>
+            <span style={{ color: T.border }}>·</span>
+            <a href={PLATFORM.teacherLogin} style={{ fontSize: '.85rem', color: T.muted, textDecoration: 'none' }}>Teacher login</a>
+          </div>
         </div>
       </div>
 
