@@ -95,10 +95,12 @@ export default function Nav({ T, onToggleDark, dark }) {
       <div style={{
         maxHeight: mobileOpen ? 360 : 0,
         overflow: 'hidden',
+        visibility: mobileOpen ? 'visible' : 'hidden',
+        pointerEvents: mobileOpen ? 'auto' : 'none',
         transition: 'max-height .4s cubic-bezier(.4,0,.2,1)',
         background: T.navBg,
         borderTop: mobileOpen ? `1px solid ${T.border}` : 'none',
-      }}>
+      }} aria-hidden={!mobileOpen}>
         <div style={{ padding: '20px 5% 28px', display: 'flex', flexDirection: 'column', gap: 4 }}>
           {NAV_LINKS.map(({ label, id }) => (
             <button key={id} onClick={() => handleNav(id)}
