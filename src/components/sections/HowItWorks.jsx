@@ -42,7 +42,7 @@ export default function HowItWorks({ T }) {
               style={{ padding: '15px 36px', borderRadius: 50, fontSize: '1rem', background: T.accent, color: '#fff', border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 500, transition: 'all .25s', textDecoration: 'none', display: 'inline-block' }}
               onMouseEnter={e => { e.currentTarget.style.background = T.accentD; e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.transform = 'translateY(0)' }}>
-              Start Your Application
+              Start free trial
             </a>
           </div>
         </FadeIn>

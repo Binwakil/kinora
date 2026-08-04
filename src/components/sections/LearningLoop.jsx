@@ -45,7 +45,7 @@ export default function LearningLoop({ T }) {
               <p style={{ fontSize: '.86rem', color: T.muted }}>Start with a family intake, then Kinora handles the matching queue.</p>
             </div>
             <a href={PLATFORM.parentSignup} style={{ textDecoration: 'none', padding: '12px 24px', borderRadius: 50, background: T.accent, color: '#fff', fontFamily: "'DM Sans',sans-serif", fontSize: '.88rem', fontWeight: 700 }}>
-              Start Family Intake
+              Start free trial
             </a>
           </div>
         </FadeIn>

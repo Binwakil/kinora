@@ -4,6 +4,10 @@
  * Replace Unsplash URLs with your own photography when ready.
  */
 
+import { CULTURES } from './cultures'
+
+export const CULTURE_COUNT_LABEL = `${CULTURES.length}+`
+
 // ─── Images ────────────────────────────────────────────────
 // Replace each URL with your own images.
 // Naming convention: replace with /images/hero.jpg etc once you have real photos.
@@ -30,7 +34,7 @@ export const NAV_LINKS = [
 // ─── Stats bar ─────────────────────────────────────────────
 export const STATS = [
   { value: '200+', label: 'Families enrolled'      },
-  { value: '50+',  label: 'Culture paths'           },
+  { value: CULTURE_COUNT_LABEL,  label: 'Culture paths'           },
   { value: '95%',  label: 'Trial-to-paid rate'     },
   { value: '4.9★', label: 'Avg teacher rating'     },
 ]
@@ -99,7 +103,7 @@ export const TESTIMONIALS = [
 export const FAQ = [
   {
     q: 'What cultures and languages does Kinora support?',
-    a: "We currently support 50+ culture paths across Africa, the Middle East, South Asia, East Asia, Southeast Asia, Europe, and the Americas. If we don't have a teacher for your background yet, we'll add you to our priority waitlist.",
+    a: `We currently support ${CULTURE_COUNT_LABEL} culture paths across Africa, the Middle East, South Asia, East Asia, Southeast Asia, Europe, and the Americas. If we don't have a teacher for your background yet, we'll add you to our priority waitlist.`,
   },
   {
     q: 'Can my child have more than one teacher?',

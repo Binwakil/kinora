@@ -112,7 +112,7 @@ function ApplicationModal({ T, onClose }) {
           <>
             <TreeIcon size={34} color={T.accent} />
             <h3 className="sf" style={{ fontSize: '1.85rem', fontWeight: 600, color: T.text, marginTop: 16, marginBottom: 6 }}>
-              Apply for a Free Session
+              Start free trial
             </h3>
             <p style={{ fontSize: '.84rem', color: T.muted, marginBottom: 28, lineHeight: 1.75 }}>
               No credit card. We'll personally match your child with the right teacher.
@@ -219,7 +219,7 @@ export default function ApplyCTA({ T }) {
                 style={{ padding: '16px 38px', borderRadius: 50, fontSize: '1rem', background: '#F0E4D0', color: T.accentD, fontWeight: 600, border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", transition: 'all .25s' }}
                 onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'}
                 onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                Apply for a Free Session
+                Start free trial
               </button>
               <a href={PLATFORM.teacherSignup}
                 style={{ padding: '16px 30px', borderRadius: 50, fontSize: '1rem', background: 'transparent', color: '#C8A080', border: `1.5px solid ${T.accent}`, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 500, transition: 'all .25s', textDecoration: 'none', display: 'inline-block' }}

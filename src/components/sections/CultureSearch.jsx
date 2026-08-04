@@ -2,6 +2,7 @@ import { useState } from 'react'
 import FadeIn from '../ui/FadeIn'
 import { scrollTo } from '../../utils/scroll'
 import { CULTURES, CULTURE_TABS } from '../../data/cultures'
+import { CULTURE_COUNT_LABEL } from '../../data/constants'
 
 export default function CultureSearch({ T }) {
   const [tab, setTab] = useState('all')
@@ -30,7 +31,7 @@ export default function CultureSearch({ T }) {
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,minmax(100px,1fr))', gap: 10, minWidth: 240 }}>
-              <CultureStat value={`${CULTURES.length}+`} label="Culture paths" T={T} />
+              <CultureStat value={CULTURE_COUNT_LABEL} label="Culture paths" T={T} />
               <CultureStat value="8" label="Regions" T={T} />
             </div>
           </div>
@@ -144,7 +145,7 @@ function CultureCard({ culture: c, T }) {
         onMouseEnter={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.color = '#fff' }}
         onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = T.accent }}
       >
-        Request a Teacher
+        Explore {c.name}
       </button>
     </div>
   )

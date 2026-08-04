@@ -78,7 +78,7 @@ export default function Nav({ T, onToggleDark, dark }) {
           <a href={PLATFORM.parentSignup} className="nav-primary-cta" style={{ textDecoration: 'none' }}>
             <Button variant="primary" T={T}
               style={{ padding: '10px 22px', borderRadius: 50, fontSize: '.85rem' }}>
-              Apply Free
+              Start free trial
             </Button>
           </a>
 
@@ -113,7 +113,7 @@ export default function Nav({ T, onToggleDark, dark }) {
           <a href={PLATFORM.parentSignup} style={{ textDecoration: 'none' }}>
             <Button variant="primary" T={T}
               style={{ marginTop: 8, padding: '13px 16px', borderRadius: 10, fontSize: '1rem', textAlign: 'left', width: '100%' }}>
-              Apply for a Free Session
+              Start free trial
             </Button>
           </a>
           <div style={{ display: 'flex', gap: 16, marginTop: 4, paddingLeft: 4 }}>

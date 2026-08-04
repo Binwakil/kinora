@@ -54,7 +54,7 @@ export default function Pricing({ T }) {
                 style={{ display: 'block', width: '100%', padding: '16px', borderRadius: 14, fontSize: '1rem', background: '#F0E4D0', color: T.accentD, fontWeight: 600, border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", transition: 'all .25s', textDecoration: 'none', textAlign: 'center', boxSizing: 'border-box' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 28px #00000030' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}>
-                Apply for a Free Trial Session
+                Start free trial
               </a>
               <p style={{ color: '#6A5040', fontSize: '.75rem', marginTop: 10 }}>No credit card required for your first session</p>
             </div>

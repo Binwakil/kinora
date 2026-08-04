@@ -1,5 +1,5 @@
 import { scrollTo } from '../../utils/scroll'
-import { IMG } from '../../data/constants'
+import { CULTURE_COUNT_LABEL, IMG } from '../../data/constants'
 import { PLATFORM } from '../../config'
 import Img from '../ui/Img'
 import { StarIcon } from '../ui/Icons'
@@ -49,7 +49,7 @@ export default function Hero({ T }) {
               onMouseEnter={e => { e.currentTarget.style.background = T.accentD; e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.transform = 'translateY(0)' }}
             >
-              Apply for a Free Session
+              Start free trial
             </a>
             <button
               onClick={() => scrollTo('how-it-works')}
@@ -57,14 +57,26 @@ export default function Hero({ T }) {
               onMouseEnter={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.color = '#fff' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = T.accent }}
             >
-              How It Works
+              How it works
             </button>
           </div>
 
-          <div className="anim-fade-up-3 hero-proof" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            {['Every teacher vetted', 'Trial before commitment', 'Parent-controlled learning'].map(t => (
-              <span key={t} style={{ fontSize: '.82rem', color: T.muted, fontWeight: 700, border: `1px solid ${T.border}`, background: T.card, borderRadius: 50, padding: '7px 12px' }}>{t}</span>
+          <div className="anim-fade-up-3 hero-proof" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+            {['Background-checked teachers', 'Parent can join any session', 'Free rematch if fit is wrong'].map(t => (
+              <span key={t} style={{ fontSize: '.82rem', color: T.muted, fontWeight: 700, border: `1px solid ${T.border}`, background: T.card, borderRadius: 50, padding: '7px 12px', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+                  <path d="M12 3l7 3v5c0 4.2-2.9 7-7 8-4.1-1-7-3.8-7-8V6z" stroke={T.accent} strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M9 12l2 2 4-4" stroke={T.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {t}
+              </span>
             ))}
+            <button
+              onClick={() => scrollTo('trust')}
+              style={{ fontSize: '.82rem', color: T.accent, fontWeight: 700, border: 'none', background: 'transparent', padding: '7px 2px', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", textDecoration: 'underline', textUnderlineOffset: 3 }}
+            >
+              How we protect children
+            </button>
           </div>
         </div>
 
@@ -77,7 +89,7 @@ export default function Hero({ T }) {
             <p style={{ fontSize: '.73rem', color: T.muted, fontWeight: 700 }}>Trusted by diaspora families</p>
           </div>
           <div className="hero-float-card hero-cultures" style={{ position: 'absolute', bottom: 34, left: -20, background: T.card, borderRadius: 16, padding: '12px 18px', boxShadow: `0 8px 30px ${T.accent}18`, border: `1px solid ${T.border}` }}>
-            <p style={{ fontSize: '.73rem', color: T.accent, fontWeight: 800, marginBottom: 2 }}>50+ culture paths</p>
+            <p style={{ fontSize: '.73rem', color: T.accent, fontWeight: 800, marginBottom: 2 }}>{CULTURE_COUNT_LABEL} culture paths</p>
             <p style={{ fontSize: '.7rem', color: T.muted }}>Africa - Asia - MENA - Americas</p>
           </div>
         </div>
