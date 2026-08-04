@@ -195,6 +195,7 @@ export default function Teachers({ T }) {
                       </div>
                     </div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginTop: 12 }}>
+                      {['ID verified', 'Background checked', 'Cultural assessment'].map(s => <span key={s} style={{ background: T.bgAlt, color: T.muted, fontSize: '.68rem', padding: '3px 9px', borderRadius: 50, border: `1px solid ${T.border}` }}>{s}</span>)}
                       {t.subjects.map(s => <span key={s} style={{ background: `${T.accent}14`, color: T.accent, fontSize: '.71rem', padding: '3px 10px', borderRadius: 50 }}>{s}</span>)}
                     </div>
                     <button onClick={() => scrollTo('apply')}
@@ -211,7 +212,7 @@ export default function Teachers({ T }) {
 
           <FadeIn delay={0.2}>
             <p style={{ textAlign: 'center', marginTop: 32, fontSize: '.85rem', color: T.muted }}>
-              Sample profiles — your matched teacher is selected specifically for your family.
+              Sample profiles for the public site. Families see consented, match-specific teacher details inside the portal.
             </p>
           </FadeIn>
 

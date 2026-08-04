@@ -122,6 +122,12 @@ function CultureStat({ value, label, T }) {
 }
 
 function CultureCard({ culture: c, T }) {
+  const availability = c.teachers >= 8 ? ['High availability', 'green'] : c.teachers >= 4 ? ['Limited spots', 'amber'] : ['Waitlist likely', 'gray']
+  const availabilityStyle = {
+    green: { background: '#E7F1E8', color: '#4E7A52' },
+    amber: { background: '#F6E9D2', color: '#8A5A18' },
+    gray: { background: T.bgAlt, color: T.muted },
+  }[availability[1]]
   return (
     <div className="card-hover" style={{ background: T.card, borderRadius: 18, padding: '22px 22px 18px', border: `1.5px solid ${T.border}`, height: '100%' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 }}>
@@ -132,8 +138,8 @@ function CultureCard({ culture: c, T }) {
             <p style={{ fontSize: '.74rem', color: T.accent, fontWeight: 600 }}>{c.region}</p>
           </div>
         </div>
-        <div style={{ background: T.bgAlt, borderRadius: 50, padding: '4px 12px', flexShrink: 0 }}>
-          <p style={{ fontSize: '.73rem', fontWeight: 700, color: T.accentD, whiteSpace: 'nowrap' }}>{c.teachers} teachers</p>
+        <div style={{ borderRadius: 50, padding: '4px 12px', flexShrink: 0, ...availabilityStyle }}>
+          <p style={{ fontSize: '.73rem', fontWeight: 800, whiteSpace: 'nowrap' }}>{availability[0]}</p>
         </div>
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginBottom: 16 }}>
