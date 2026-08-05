@@ -172,7 +172,7 @@ export default function Teachers({ T }) {
             <p style={{ fontSize: '.8rem', color: T.accent, letterSpacing: '.15em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 16 }}>Meet the teachers</p>
             <h2 className="sf" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 600, marginBottom: 16, color: T.text }}>Experts in who your child is.</h2>
             <p style={{ fontSize: '.96rem', color: T.muted, maxWidth: 500, marginBottom: 68, lineHeight: 1.85 }}>
-              Every teacher passed our vetting process, a background check, and a cultural assessment interview.
+              Every teacher passed our vetting process, reference and identity checks, and a cultural assessment interview.
             </p>
           </FadeIn>
 
@@ -195,7 +195,7 @@ export default function Teachers({ T }) {
                       </div>
                     </div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginTop: 12 }}>
-                      {['ID verified', 'Background checked', 'Cultural assessment'].map(s => <span key={s} style={{ background: T.bgAlt, color: T.muted, fontSize: '.68rem', padding: '3px 9px', borderRadius: 50, border: `1px solid ${T.border}` }}>{s}</span>)}
+                      {['ID verified', 'Reference checked', 'Cultural assessment'].map(s => <span key={s} style={{ background: T.bgAlt, color: T.muted, fontSize: '.68rem', padding: '3px 9px', borderRadius: 50, border: `1px solid ${T.border}` }}>{s}</span>)}
                       {t.subjects.map(s => <span key={s} style={{ background: `${T.accent}14`, color: T.accent, fontSize: '.71rem', padding: '3px 10px', borderRadius: 50 }}>{s}</span>)}
                     </div>
                     <button onClick={() => scrollTo('apply')}

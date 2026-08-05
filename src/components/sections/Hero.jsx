@@ -62,7 +62,7 @@ export default function Hero({ T }) {
           </div>
 
           <div className="anim-fade-up-3 hero-proof" style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
-            {['Background-checked teachers', 'Parent can join any session', 'Free rematch if fit is wrong'].map(t => (
+            {['ID-verified, vetted teachers', 'Parent can join any session', 'Free rematch if fit is wrong'].map(t => (
               <span key={t} style={{ fontSize: '.82rem', color: T.muted, fontWeight: 700, border: `1px solid ${T.border}`, background: T.card, borderRadius: 50, padding: '7px 12px', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
                   <path d="M12 3l7 3v5c0 4.2-2.9 7-7 8-4.1-1-7-3.8-7-8V6z" stroke={T.accent} strokeWidth="2" strokeLinejoin="round" />

@@ -10,9 +10,9 @@ export default function FadeIn({ children, delay = 0, style = {} }) {
     <div
       ref={ref}
       style={{
-        opacity:    inView ? 1 : 0,
-        transform:  inView ? 'translateY(0)' : 'translateY(26px)',
-        transition: `opacity .7s ease ${delay}s, transform .7s ease ${delay}s`,
+        opacity: 1,
+        transform:  inView ? 'translateY(0)' : 'translateY(14px)',
+        transition: `transform .7s ease ${delay}s`,
         ...style,
       }}
     >

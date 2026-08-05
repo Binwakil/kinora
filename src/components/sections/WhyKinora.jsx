@@ -2,7 +2,7 @@ import FadeIn from '../ui/FadeIn'
 
 const REASONS = [
   { icon: '🤝', title: 'Personal Matching, Not an Algorithm', desc: 'Every family matched by hand. We read your story, understand your needs, and choose a teacher who fits — not just a filter result.' },
-  { icon: '🔍', title: 'Every Teacher is Vetted',             desc: 'Background checked, interview verified, and culturally assessed before they ever meet a child.' },
+  { icon: '🔍', title: 'Every Teacher is Vetted',             desc: 'Reference checked, interview verified, and culturally assessed before they ever meet a child.' },
   { icon: '👁️', title: 'Full Parental Visibility',            desc: "Observe any session. Structured report after every class. Nothing happens with your child that you don't know about." },
 ]
 

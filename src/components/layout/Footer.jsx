@@ -28,8 +28,8 @@ const FOOTER_LINKS = [
     links: [
       { label: 'FAQ',              id: 'faq'  },
       { label: 'Contact Us',       id: null   },
-      { label: 'Privacy Policy',   id: null   },
-      { label: 'Terms of Service', id: null   },
+      { label: 'Privacy Policy',   href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
       { label: 'Data Policy',      id: null   },
     ],
   },
@@ -71,14 +71,23 @@ export default function Footer({ T }) {
           {FOOTER_LINKS.map(({ title, links }) => (
             <div key={title}>
               <p style={{ fontSize: '.74rem', color: T.accentL, fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 16 }}>{title}</p>
-              {links.map(({ label, id }) => (
+              {links.map(({ label, id, href }) => (
                 <p key={label} style={{ marginBottom: 8 }}>
-                  <button onClick={() => id && scrollTo(id)}
-                    style={{ fontSize: '.82rem', color: T.footerText, background: 'none', border: 'none', cursor: id ? 'pointer' : 'default', fontFamily: 'inherit', padding: 0, transition: 'color .2s', textAlign: 'left' }}
-                    onMouseEnter={e => { if (id) e.currentTarget.style.color = T.accentL }}
-                    onMouseLeave={e => e.currentTarget.style.color = T.footerText}>
-                    {label}
-                  </button>
+                  {href ? (
+                    <a href={href}
+                      style={{ fontSize: '.82rem', color: T.footerText, background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0, transition: 'color .2s', textAlign: 'left', textDecoration: 'none' }}
+                      onMouseEnter={e => { e.currentTarget.style.color = T.accentL }}
+                      onMouseLeave={e => e.currentTarget.style.color = T.footerText}>
+                      {label}
+                    </a>
+                  ) : (
+                    <button onClick={() => id && scrollTo(id)}
+                      style={{ fontSize: '.82rem', color: T.footerText, background: 'none', border: 'none', cursor: id ? 'pointer' : 'default', fontFamily: 'inherit', padding: 0, transition: 'color .2s', textAlign: 'left' }}
+                      onMouseEnter={e => { if (id) e.currentTarget.style.color = T.accentL }}
+                      onMouseLeave={e => e.currentTarget.style.color = T.footerText}>
+                      {label}
+                    </button>
+                  )}
                 </p>
               ))}
             </div>

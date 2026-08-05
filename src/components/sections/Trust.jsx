@@ -4,7 +4,7 @@ import TreeIcon from '../ui/TreeIcon'
 import { TRUST_COMMITMENTS } from '../../data/constants'
 
 const SAFEGUARDS = [
-  { t: 'Verified identity & background checks', d: 'Every teacher submits government ID and undergoes a background screening before approval.' },
+  { t: 'Verified identity & references', d: 'Every teacher submits government ID and provides professional references we personally check before approval.' },
   { t: 'No unsupervised child access',           d: 'Parents may join any session at any time. No session proceeds without parental confirmation.' },
   { t: 'Session logging & traceability',         d: 'Every session is timestamped and logged. Any concern triggers immediate human review.' },
   { t: 'Incident reporting & escalation',        d: 'Trust or safety concerns handled by a real person, not a bot, within 24 hours.' },

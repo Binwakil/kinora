@@ -1,6 +1,7 @@
 import Nav          from '../components/layout/Nav'
 import Footer        from '../components/layout/Footer'
 import MobileStickyCTA from '../components/layout/MobileStickyCTA'
+import MobileJumpNav from '../components/layout/MobileJumpNav'
 import Hero          from '../components/sections/Hero'
 import Stats         from '../components/sections/Stats'
 import Problem       from '../components/sections/Problem'
@@ -33,6 +34,7 @@ export default function LandingPage({ T, dark, onToggleDark }) {
 
       <Hero          T={T} />
       <Stats         T={T} />
+      <MobileJumpNav T={T} />
       <Problem       T={T} />
       <VideoSection  T={T} />
       <ParentProof   T={T} />

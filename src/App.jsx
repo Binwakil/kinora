@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { LIGHT, DARK } from './theme'
 import LandingPage from './pages/LandingPage'
+import LegalPage from './pages/LegalPage'
 
 const STORAGE_KEY = 'kinora_dark'
 
@@ -18,6 +19,18 @@ export default function App() {
   }, [dark])
 
   const T = dark ? DARK : LIGHT
+  const path = window.location.pathname.toLowerCase()
+
+  if (path === '/terms' || path === '/privacy') {
+    return (
+      <LegalPage
+        T={T}
+        dark={dark}
+        type={path === '/terms' ? 'terms' : 'privacy'}
+        onToggleDark={() => setDark(d => !d)}
+      />
+    )
+  }
 
   return (
     <LandingPage

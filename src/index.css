@@ -81,6 +81,10 @@ body {
   display: none;
 }
 
+.mobile-jump-nav {
+  display: none;
+}
+
 /* Dark mode toggle */
 .dm-toggle {
   transition: all 0.3s;
@@ -198,5 +202,24 @@ body {
   }
   body {
     padding-bottom: 72px;
+  }
+  .mobile-jump-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 120;
+  }
+  .mobile-jump-nav a {
+    min-height: 42px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
   }
 }

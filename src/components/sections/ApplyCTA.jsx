@@ -182,6 +182,12 @@ function ApplicationModal({ T, onClose }) {
               <p style={{ fontSize: '.73rem', color: T.muted, textAlign: 'center', lineHeight: 1.6 }}>
                 We respond within 48 hours · First session always free
               </p>
+              <p style={{ fontSize: '.7rem', color: T.muted, textAlign: 'center', lineHeight: 1.6, opacity: 0.85 }}>
+                By applying you agree to our{' '}
+                <a href="/terms" target="_blank" rel="noreferrer" style={{ color: T.accent, textDecoration: 'underline' }}>Terms</a>
+                {' '}and{' '}
+                <a href="/privacy" target="_blank" rel="noreferrer" style={{ color: T.accent, textDecoration: 'underline' }}>Privacy Policy</a>.
+              </p>
             </form>
           </>
         )}
