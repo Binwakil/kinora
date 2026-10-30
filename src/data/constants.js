@@ -14,7 +14,7 @@ export const IMG = {
 }
 
 export const NAV_LINKS = [
-  { label: 'For Parents', id: 'how-it-works' },
+  { label: 'Hausa pilot', id: 'pilot' },
   { label: 'For Teachers', id: 'teachers' },
   { label: 'Cultures', id: 'cultures' },
   { label: 'Pricing', id: 'pricing' },
@@ -89,7 +89,7 @@ export const TESTIMONIALS = [
 export const FAQ = [
   {
     q: 'What cultures and languages does Kinora support?',
-    a: `We currently support ${CULTURE_COUNT_LABEL} culture paths across Africa, the Middle East, South Asia, East Asia, Southeast Asia, Europe, and the Americas. If we do not have a teacher for your background yet, we add you to our priority waitlist.`,
+    a: `Explore ${CULTURE_COUNT_LABEL} community and language interests across Africa, the Middle East, Asia, Europe, and the Americas. This is a discovery catalog, not a count of available teachers. We confirm your language, country, and teacher availability before booking.`,
   },
   {
     q: 'Can my child have more than one teacher?',
@@ -97,23 +97,23 @@ export const FAQ = [
   },
   {
     q: "What if the match isn't right?",
-    a: 'You tell us, and we rematch with no penalty and no awkward conversation. Teacher reassignment is part of how we operate.',
+    a: 'Tell our team about the concern. We review teacher availability and your agreed lesson terms before proposing a change.',
   },
   {
     q: 'Who can attend the sessions?',
-    a: 'Parents are always welcome to observe. Sessions can be joined by any parent or guardian at any time. No unsupervised child access, ever.',
+    a: 'We arrange parent visibility and supervision before lessons begin. Access is restricted to authorised participants, with the actual class arrangements confirmed in advance.',
   },
   {
     q: 'How are teachers paid?',
-    a: 'Teachers receive fair, dignified compensation, not a gig economy rate. Our pricing ensures teachers earn a living wage for their expertise and time.',
+    a: 'Teacher compensation, preparation expectations, cancellation rules, and payment timing are agreed in writing before teaching begins. We are finalising these arrangements for our first teachers.',
   },
   {
     q: "Is my child's data protected?",
-    a: 'We collect minimal data, store it securely, and never share it with third parties. Our full data privacy policy is available before you sign up.',
+    a: 'Our privacy notice explains the data used for accounts, matching, payments, and lessons, including service providers. Parents manage their child profiles and consent. Read the notice before signing up.',
   },
   {
     q: 'How long is each session, and what does it look like?',
-    a: "Sessions run 50 minutes. Each class has a warm-up in your child's heritage language, a main activity, and a short recap. Your teacher sends a written report after every session.",
+    a: 'The lesson length and included sessions will be shown in your offer before booking. Lessons can include conversation, stories, and an activity matched to your child’s level. Ask about the planned format when reviewing your teacher match.',
   },
   {
     q: 'What if my child already speaks the language fluently?',
@@ -129,15 +129,15 @@ export const FAQ = [
   },
   {
     q: 'Are sessions recorded?',
-    a: 'Sessions are not recorded by default. Teachers write a session report so parents can see what was practiced, what to try at home, and what comes next.',
+    a: 'Recording and transcription are disabled for launch. Teacher notes help parents follow what was practised and what to try at home.',
   },
   {
     q: 'How does pricing work for siblings?',
-    a: 'Pricing is per child because each child has their own level and progress. Two children are usually about $80/month; larger families can ask for a custom plan.',
+    a: 'Each child has their own learning needs and teacher match. Your family offer will state which children are included, the total price and currency, and the lessons for each child before payment.',
   },
   {
     q: 'What if my culture is not listed?',
-    a: 'Apply anyway and tell us your country, region, language, culture, and optional faith preference. If we do not have a match yet, we add you to the priority waitlist.',
+    a: 'Join the heritage waitlist for any language, culture or tradition. Share your child’s age range, preferred start month and schedule. Our team reviews possible teachers and compatible groups, then emails you when there is a match to discuss. A place is confirmed separately.',
   },
 ]
 
@@ -163,7 +163,7 @@ export const PRICING_FEATURES = [
 export const TRUST_COMMITMENTS = [
   { title: 'Parental consent', sub: 'Required for every session, every time.' },
   { title: 'Cultural self-selection', sub: 'You choose the values taught.' },
-  { title: 'Fair teacher compensation', sub: 'Teachers earn a dignified living wage.' },
+  { title: 'Clear teacher terms', sub: 'Compensation and responsibilities agreed before teaching.' },
   { title: 'Zero tolerance for harm', sub: 'No exceptions, no second chances.' },
   { title: 'Minimal data collection', sub: 'We only collect what we need.' },
 ]

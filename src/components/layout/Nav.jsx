@@ -75,10 +75,10 @@ export default function Nav({ T, onToggleDark, dark }) {
             Family login
           </a>
 
-          <a href={PLATFORM.parentSignup} className="nav-primary-cta" style={{ textDecoration: 'none' }}>
+          <a href={PLATFORM.waitlist} className="nav-primary-cta" style={{ textDecoration: 'none' }}>
             <Button variant="primary" T={T}
               style={{ padding: '10px 22px', borderRadius: 50, fontSize: '.85rem' }}>
-              Start free trial
+              Join waitlist
             </Button>
           </a>
 
@@ -110,10 +110,10 @@ export default function Nav({ T, onToggleDark, dark }) {
               {label}
             </button>
           ))}
-          <a href={PLATFORM.parentSignup} style={{ textDecoration: 'none' }}>
+          <a href={PLATFORM.waitlist} style={{ textDecoration: 'none' }}>
             <Button variant="primary" T={T}
               style={{ marginTop: 8, padding: '13px 16px', borderRadius: 10, fontSize: '1rem', textAlign: 'left', width: '100%' }}>
-              Start free trial
+              Join waitlist
             </Button>
           </a>
           <div style={{ display: 'flex', gap: 16, marginTop: 4, paddingLeft: 4 }}>

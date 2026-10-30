@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import FadeIn from '../ui/FadeIn'
-import { scrollTo } from '../../utils/scroll'
+import { PLATFORM } from '../../config'
 import { CULTURES, CULTURE_TABS } from '../../data/cultures'
 import { CULTURE_COUNT_LABEL } from '../../data/constants'
 
@@ -27,7 +27,7 @@ export default function CultureSearch({ T }) {
               <p style={{ fontSize: '.8rem', color: T.accent, letterSpacing: '.15em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 16 }}>We speak your language</p>
               <h2 className="sf" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 600, marginBottom: 16, color: T.text }}>Find your culture and language.</h2>
               <p style={{ fontSize: '.97rem', color: T.muted, maxWidth: 650, lineHeight: 1.85 }}>
-                From Hausa to Mandarin, Yoruba to Ukrainian, Tamil to Haitian Creole. Explore a growing network across Africa, the Middle East, Asia, Europe, and the Americas.
+                From Hausa to Mandarin, Yoruba to Ukrainian, Tamil to Haitian Creole. Explore community interests across Africa, the Middle East, Asia, Europe, and the Americas. Teacher availability is confirmed separately.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,minmax(100px,1fr))', gap: 10, minWidth: 240 }}>
@@ -95,15 +95,15 @@ export default function CultureSearch({ T }) {
           <div className="culture-request" style={{ background: T.bgAlt, borderRadius: 20, padding: '26px 34px', marginTop: 44, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, border: `1px solid ${T.border}` }}>
             <div>
               <p style={{ fontWeight: 700, fontSize: '.97rem', color: T.text, marginBottom: 4 }}>Do not see your exact community?</p>
-              <p style={{ fontSize: '.85rem', color: T.muted }}>Tell us your country, region, language, culture, ethnicity, and optional faith preference. The match team will search from there.</p>
+              <p style={{ fontSize: '.85rem', color: T.muted }}>Join the waitlist for any language, culture or tradition. Tell us when your family would like to start.</p>
             </div>
             <button
-              onClick={() => scrollTo('apply')}
+              onClick={() => window.location.assign(PLATFORM.waitlist)}
               style={{ padding: '12px 26px', borderRadius: 50, fontSize: '.88rem', background: T.accent, color: '#fff', border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 600, flexShrink: 0, transition: 'all .25s' }}
               onMouseEnter={e => e.currentTarget.style.background = T.accentD}
               onMouseLeave={e => e.currentTarget.style.background = T.accent}
             >
-              Request Your Culture
+              Join the waitlist
             </button>
           </div>
         </FadeIn>
@@ -122,7 +122,7 @@ function CultureStat({ value, label, T }) {
 }
 
 function CultureCard({ culture: c, T }) {
-  const availability = c.teachers >= 8 ? ['High availability', 'green'] : c.teachers >= 4 ? ['Limited spots', 'amber'] : ['Waitlist likely', 'gray']
+  const availability = ['Register interest', 'gray']
   const availabilityStyle = {
     green: { background: '#E7F1E8', color: '#4E7A52' },
     amber: { background: '#F6E9D2', color: '#8A5A18' },
@@ -130,7 +130,7 @@ function CultureCard({ culture: c, T }) {
   }[availability[1]]
   return (
     <div className="card-hover" style={{ background: T.card, borderRadius: 18, padding: '22px 22px 18px', border: `1.5px solid ${T.border}`, height: '100%' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
           <span style={{ minWidth: 38, height: 38, borderRadius: 12, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: `${T.accent}14`, color: T.accent, fontSize: '.72rem', fontWeight: 800, lineHeight: 1 }}>{c.emoji}</span>
           <div style={{ minWidth: 0 }}>
@@ -146,12 +146,12 @@ function CultureCard({ culture: c, T }) {
         {c.subjects.map(s => <span key={s} style={{ background: `${T.accent}14`, color: T.accent, fontSize: '.7rem', padding: '3px 10px', borderRadius: 50 }}>{s}</span>)}
       </div>
       <button
-        onClick={() => scrollTo('apply')}
+        onClick={() => window.location.assign(PLATFORM.parentSignup)}
         style={{ width: '100%', padding: '9px', borderRadius: 10, fontSize: '.8rem', background: 'transparent', color: T.accent, border: `1.5px solid ${T.accent}`, cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 600, transition: 'all .25s' }}
         onMouseEnter={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.color = '#fff' }}
         onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = T.accent }}
       >
-        Explore {c.name}
+        Request {c.name}
       </button>
     </div>
   )
@@ -163,7 +163,7 @@ function EmptyCultureSearch({ T, search }) {
       <p style={{ fontSize: '.96rem', color: T.muted }}>No results for "<strong style={{ color: T.text }}>{search}</strong>"</p>
       <p style={{ fontSize: '.84rem', color: T.muted, marginTop: 8 }}>
         Do not see yours?{' '}
-        <button onClick={() => scrollTo('apply')} style={{ color: T.accent, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', fontFamily: 'inherit', fontSize: '.84rem' }}>
+        <button onClick={() => window.location.assign(PLATFORM.parentSignup)} style={{ color: T.accent, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', fontFamily: 'inherit', fontSize: '.84rem' }}>
           Apply and tell us
         </button>{' '}and we will look for a teacher.
       </p>

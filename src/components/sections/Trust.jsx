@@ -7,7 +7,7 @@ const SAFEGUARDS = [
   { t: 'Verified identity & references', d: 'Every teacher submits government ID and provides professional references we personally check before approval.' },
   { t: 'No unsupervised child access',           d: 'Parents may join any session at any time. No session proceeds without parental confirmation.' },
   { t: 'Session logging & traceability',         d: 'Every session is timestamped and logged. Any concern triggers immediate human review.' },
-  { t: 'Incident reporting & escalation',        d: 'Trust or safety concerns handled by a real person, not a bot, within 24 hours.' },
+  { t: 'Incident reporting & escalation',        d: 'Report a concern privately through the parent portal. Support coverage and escalation contacts must be confirmed before lessons open.' },
 ]
 
 export default function Trust({ T }) {

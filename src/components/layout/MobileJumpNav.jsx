@@ -1,8 +1,8 @@
 const items = [
   ['Trust', '#trust'],
-  ['Pricing', '#pricing'],
+  ['Hausa pilot', '#pilot'],
   ['Cultures', '#cultures'],
-  ['FAQ', '#faq'],
+  ['Waitlist', '#waitlist'],
 ]
 
 export default function MobileJumpNav({ T }) {

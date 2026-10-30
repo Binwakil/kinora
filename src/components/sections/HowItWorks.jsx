@@ -3,9 +3,9 @@ import { PLATFORM } from '../../config'
 
 const STEPS = [
   { n: '01', when: 'Day 0', title: 'Apply as a family', desc: 'Tell us about your child, cultural background, language level, schedule, and what matters most.' },
-  { n: '02', when: 'Day 1-3', title: 'We match you personally', desc: 'No algorithm. A real person reads your application and hand-picks 2-3 teachers for review.' },
-  { n: '03', when: 'Day 3-7', title: 'First session free', desc: 'Your child meets their teacher. You observe. If it does not feel right, we rematch.' },
-  { n: '04', when: 'After trial', title: 'Subscribe monthly', desc: '$40-45/month per child, one live session per week, and a structured report after every class.' },
+  { n: '02', when: 'Availability review', title: 'Find the right teacher', desc: 'Our team reviews your language, learning goals, country, and schedule against screened teacher availability.' },
+  { n: '03', when: 'After consent & confirmation', title: 'Meet in a trial lesson', desc: 'When a teacher is available, agree a time and meet before deciding whether to continue.' },
+  { n: '04', when: 'Your decision', title: 'Choose your lesson plan', desc: 'Review the price, currency, lesson dates, and terms before starting a paid plan. A trial does not automatically become a subscription.' },
 ]
 
 export default function HowItWorks({ T }) {
@@ -15,7 +15,7 @@ export default function HowItWorks({ T }) {
         <FadeIn>
           <p style={{ textAlign: 'center', fontSize: '.8rem', color: T.accent, letterSpacing: '.15em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 16 }}>Simple by design</p>
           <h2 className="sf" style={{ textAlign: 'center', fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 600, marginBottom: 80, color: T.text }}>
-            First session in under 7 days.
+            From your family’s story to a shared plan.
           </h2>
         </FadeIn>
 
@@ -41,7 +41,7 @@ export default function HowItWorks({ T }) {
               style={{ padding: '15px 36px', borderRadius: 50, fontSize: '1rem', background: T.accent, color: '#fff', border: 'none', cursor: 'pointer', fontFamily: "'DM Sans',sans-serif", fontWeight: 700, transition: 'all .25s', textDecoration: 'none', display: 'inline-block' }}
               onMouseEnter={e => { e.currentTarget.style.background = T.accentD; e.currentTarget.style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { e.currentTarget.style.background = T.accent; e.currentTarget.style.transform = 'translateY(0)' }}>
-              Start free trial
+              Create your family profile
             </a>
           </div>
         </FadeIn>

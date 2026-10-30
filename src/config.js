@@ -15,10 +15,17 @@ const base = trimTrailingSlash(envOrDefault(import.meta.env.VITE_PLATFORM_URL, '
 
 export const PLATFORM = {
   base,
+  waitlist:      `${base}/waitlist`,
   parentSignup:  `${base}/signup/parent`,
   parentLogin:   `${base}/login/parent`,
   teacherSignup: `${base}/signup/teacher`,
   teacherLogin:  `${base}/login/teacher`,
+}
+
+export const LEGAL_OPERATOR = {
+  name: 'MANAR GLOBAL SOLUTIONS, LLC',
+  businessAddress: '6800 Wisconsin Ave, Bethesda, MD 20815, United States',
+  contacts: ['Muhammad Harper', 'Haruna Muhd Inuwa'],
 }
 
 // Kinora backend API -- used by the application form to file real intake applications.

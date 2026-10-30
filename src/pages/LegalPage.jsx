@@ -1,10 +1,11 @@
 import Nav from '../components/layout/Nav'
 import Footer from '../components/layout/Footer'
+import { LEGAL_OPERATOR } from '../config'
 
 const CONTENT = {
   terms: {
     title: 'Terms of Service',
-    updated: 'Last updated: August 2026',
+    updated: 'Last updated: October 14, 2026',
     intro: 'These terms explain the basic rules for using Kinora while we operate our early-access family and teacher platform.',
     sections: [
       ['Accounts', 'Parents, teachers, and staff are responsible for keeping account access secure and using the platform only for its intended education, scheduling, communication, and trust workflows.'],
@@ -16,7 +17,7 @@ const CONTENT = {
   },
   privacy: {
     title: 'Privacy Policy',
-    updated: 'Last updated: August 2026',
+    updated: 'Last updated: October 14, 2026',
     intro: 'Kinora is built for families and children, so we collect only the information needed to match, teach, support, and protect users.',
     sections: [
       ['Information we collect', 'We collect account details, family and child learning preferences, teacher profile and verification details, scheduling information, messages, session notes, feedback, billing status, and trust or support records.'],
@@ -44,6 +45,12 @@ export default function LegalPage({ T, dark, type, onToggleDark }) {
         </h1>
         <p style={{ color: T.muted, fontSize: '.92rem', marginBottom: 28 }}>{page.updated}</p>
         <p style={{ color: T.muted, fontSize: '1.08rem', lineHeight: 1.85, maxWidth: 760 }}>{page.intro}</p>
+        <section aria-labelledby="operator-heading" style={{ marginTop: 28, lineHeight: 1.75 }}>
+          <h2 id="operator-heading" style={{ fontSize: '1.05rem', marginBottom: 8 }}>Service operator</h2>
+          <p>KINORA is a product operated by {LEGAL_OPERATOR.name}, a Maryland limited liability company.</p>
+          <address style={{ color: T.muted, fontStyle: 'normal' }}>{LEGAL_OPERATOR.businessAddress}</address>
+          <p style={{ color: T.muted }}>Business contacts: {LEGAL_OPERATOR.contacts.join(' and ')}.</p>
+        </section>
 
         <div style={{ display: 'grid', gap: 18, marginTop: 42 }}>
           {page.sections.map(([title, body]) => (
